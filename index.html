@@ -84,7 +84,8 @@
             renderer.setClearColor(0x7393B3);  // Set the background color of the canvas
             renderer.setSize(640, 480);
             var torus = createTorus();
-            document.querySelector('.content').appendChild(renderer.domElement);
+            var contentDiv = document.querySelector('.content');
+            contentDiv.appendChild(renderer.domElement);
 
             camera.position.z = 50;
 
@@ -128,6 +129,7 @@
             var links = document.querySelectorAll('nav a');
             links.forEach(function(link) {
                 link.addEventListener('click', function(event) {
+                    event.preventDefault(); // Prevent default link behavior
                     var sectionId = event.target.getAttribute('data-section');
                     showSection(sectionId);
                 });
