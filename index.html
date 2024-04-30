@@ -76,6 +76,19 @@
     </style>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
     <script>
+        function showSection(sectionId) {
+            // Hide all sections
+            var sections = document.querySelectorAll('section');
+            sections.forEach(function(section) {
+                section.style.display = 'none';
+            });
+            // Show the selected section
+            var selectedSection = document.getElementById(sectionId);
+            if (selectedSection) {
+                selectedSection.style.display = 'block';
+            }
+        }
+        
         document.addEventListener('DOMContentLoaded', function() {
             var scene = new THREE.Scene();
             var camera = new THREE.PerspectiveCamera(75, 640 / 480, 0.1, 1000); // Aspect ratio is 1 because width and height are the same
