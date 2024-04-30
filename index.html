@@ -123,6 +123,15 @@
                     }
                 }
             }
+
+            // Add event listeners to navigation links
+            var links = document.querySelectorAll('nav a');
+            links.forEach(function(link) {
+                link.addEventListener('click', function(event) {
+                    var sectionId = event.target.getAttribute('data-section');
+                    showSection(sectionId);
+                });
+            });
         });
     </script>
 </head>
@@ -132,11 +141,11 @@
             <h1>Welcome to the Math Union!</h1>
             <nav>
                 <ul>
-                    <li><a onclick="showSection('content')">Content</a></li>
-                    <li><a onclick="showSection('photos')">Photos</a></li>
-                    <li><a onclick="showSection('videos')">Videos</a></li>
-                    <li><a onclick="showSection('announcements')">Announcements</a></li>
-                    <li><a onclick="showSection('contact')">Contact Us</a></li>
+                    <li><a href="#" data-section="content">Content</a></li>
+                    <li><a href="#" data-section="photos">Photos</a></li>
+                    <li><a href="#" data-section="videos">Videos</a></li>
+                    <li><a href="#" data-section="announcements">Announcements</a></li>
+                    <li><a href="#" data-section="contact">Contact Us</a></li>
                 </ul>
             </nav>
         </header>
