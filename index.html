@@ -76,19 +76,6 @@
     </style>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
     <script>
-        function showSection(sectionId) {
-            // Hide all sections
-            var sections = document.querySelectorAll('section');
-            sections.forEach(function(section) {
-                section.style.display = 'none';
-            });
-            // Show the selected section
-            var selectedSection = document.getElementById(sectionId);
-            if (selectedSection) {
-                selectedSection.style.display = 'block';
-            }
-        }
-        
         document.addEventListener('DOMContentLoaded', function() {
             var scene = new THREE.Scene();
             var camera = new THREE.PerspectiveCamera(75, 640 / 480, 0.1, 1000); // Aspect ratio is 1 because width and height are the same
@@ -96,12 +83,8 @@
             var renderer = new THREE.WebGLRenderer({ antialias: true });
             renderer.setClearColor(0x7393B3);  // Set the background color of the canvas
             renderer.setSize(640, 480);
+            var torus = createTorus();
             document.querySelector('.content').appendChild(renderer.domElement);
-
-            var geometry = new THREE.TorusGeometry(10, 3, 16, 100);
-            var material = new THREE.MeshBasicMaterial({ color: 0x808080, wireframe: true });
-            var torus = new THREE.Mesh(geometry, material);
-            scene.add(torus);
 
             camera.position.z = 50;
 
@@ -115,6 +98,31 @@
             };
 
             animate();
+
+            function createTorus() {
+                var geometry = new THREE.TorusGeometry(10, 3, 16, 100);
+                var material = new THREE.MeshBasicMaterial({ color: 0x808080, wireframe: true });
+                var torus = new THREE.Mesh(geometry, material);
+                scene.add(torus);
+                return torus;
+            }
+
+            function showSection(sectionId) {
+                // Hide all sections
+                var sections = document.querySelectorAll('section');
+                sections.forEach(function(section) {
+                    section.style.display = 'none';
+                });
+                // Show the selected section
+                var selectedSection = document.getElementById(sectionId);
+                if (selectedSection) {
+                    selectedSection.style.display = 'block';
+                    // Remove torus if videos or photos section is clicked
+                    if (sectionId === 'photos' || sectionId === 'videos') {
+                        scene.remove(torus);
+                    }
+                }
+            }
         });
     </script>
 </head>
