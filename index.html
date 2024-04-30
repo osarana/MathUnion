@@ -65,7 +65,7 @@
         }
         #torus {
             width: 640px;
-            height: 640px;
+            height: 480px;
             position: absolute;
             top: 50%;
             left: 50%;
@@ -81,7 +81,7 @@
 
             var renderer = new THREE.WebGLRenderer({ antialias: true });
             renderer.setClearColor(0x7393B3);  // Set the background color of the canvas
-            renderer.setSize(640, 640);
+            renderer.setSize(640, 480);
             document.querySelector('.content').appendChild(renderer.domElement);
 
             var geometry = new THREE.TorusGeometry(10, 3, 16, 100);
