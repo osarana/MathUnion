@@ -67,6 +67,7 @@
             width: 640px;
             height: 480px;
             position: absolute;
+            text-align: center;
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
@@ -77,7 +78,7 @@
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             var scene = new THREE.Scene();
-            var camera = new THREE.PerspectiveCamera(75, 1, 0.1, 1000); // Aspect ratio is 1 because width and height are the same
+            var camera = new THREE.PerspectiveCamera(75, 640 / 480, 0.1, 1000); // Aspect ratio is 1 because width and height are the same
 
             var renderer = new THREE.WebGLRenderer({ antialias: true });
             renderer.setClearColor(0x7393B3);  // Set the background color of the canvas
