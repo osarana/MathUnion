@@ -1,13 +1,22 @@
 <!DOCTYPE html>
-<html>
+<html style="height: 100%;">
 <head>
     <title>Math Union at University of Miami</title>
     <style>
+        body, html {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
         body {
+            display: flex;
+            flex-direction: column;
             background-color: #7393B3;
             color: white;
             font-family: 'Courier New', monospace;
-            margin: 0;
+        }
+        .content {
+            flex: 1;
             padding: 20px;
         }
         h1, h2 {
@@ -30,7 +39,6 @@
             cursor: pointer;
         }
         .footer {
-            margin-top: 20px;
             padding: 10px;
             background-color: #000080;
             text-align: center;
@@ -60,49 +68,51 @@
     </script>
 </head>
 <body>
-    <header>
-        <h1>Welcome to the Math Union!</h1>
-        <nav>
-            <ul>
-                <li><a onclick="showSection('content')">Content</a></li>
-                <li><a onclick="showSection('photos')">Photos</a></li>
-                <li><a onclick="showSection('videos')">Videos</a></li>
-                <li><a onclick="showSection('announcements')">Announcements</a></li>
-                <li><a onclick="showSection('contact')">Contact Us</a></li>
-            </ul>
-        </nav>
-    </header>
+    <div class="content">
+        <header>
+            <h1>Welcome to the Math Union!</h1>
+            <nav>
+                <ul>
+                    <li><a onclick="showSection('content')">Content</a></li>
+                    <li><a onclick="showSection('photos')">Photos</a></li>
+                    <li><a onclick="showSection('videos')">Videos</a></li>
+                    <li><a onclick="showSection('announcements')">Announcements</a></li>
+                    <li><a onclick="showSection('contact')">Contact Us</a></li>
+                </ul>
+            </nav>
+        </header>
 
-    <p class="initial">The Math Union at the University of Miami is a community of students passionate about mathematics and its applications. Join us to explore exciting math topics, discuss academic and career opportunities, and connect with fellow math enthusiasts.</p>
+        <p class="initial">The Math Union at the University of Miami is a community of students passionate about mathematics and its applications. Join us to explore exciting math topics, discuss academic and career opportunities, and connect with fellow math enthusiasts.</p>
 
-    <section id="content">
-        <h2>Content</h2>
-        <p>Mathematical discussions, problem-solving techniques, and more.</p>
-    </section>
+        <section id="content">
+            <h2>Content</h2>
+            <p>Mathematical discussions, problem-solving techniques, and more.</p>
+        </section>
 
-    <section id="photos">
-        <h2>Photos</h2>
-        <img src="photo1.jpg" alt="Math session">
-        <img src="photo2.jpg" alt="Annual math competition">
-    </section>
+        <section id="photos">
+            <h2>Photos</h2>
+            <img src="photo1.jpg" alt="Math session">
+            <img src="photo2.jpg" alt="Annual math competition">
+        </section>
 
-    <section id="videos">
-        <h2>Videos</h2>
-        <video controls>
-            <source src="math_tutorial.mp4" type="video/mp4">
-            Your browser does not support the video tag.
-        </video>
-    </section>
+        <section id="videos">
+            <h2>Videos</h2>
+            <video controls>
+                <source src="math_tutorial.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </section>
 
-    <section id="announcements">
-        <h2>Announcements</h2>
-        <p>New meeting times! Join us every Monday at 5 PM.</p>
-    </section>
+        <section id="announcements">
+            <h2>Announcements</h2>
+            <p>New meeting times! Join us every Monday at 5 PM.</p>
+        </section>
 
-    <section id="contact">
-        <h2>Contact Us</h2>
-        <p>Meetings are held weekly. For details on the next meeting or to join our mailing list, please contact us: <a href="mailto:oxa318@miami.edu">oxa318@miami.edu</a></p>
-    </section>
+        <section id="contact">
+            <h2>Contact Us</h2>
+            <p>Meetings are held weekly. For details on the next meeting or to join our mailing list, please contact us: <a href="mailto:mathunion@miami.edu">mathunion@miami.edu</a></p>
+        </section>
+    </div>
 
     <div class="footer">
         &copy; 2024 Math Union at the University of Miami
