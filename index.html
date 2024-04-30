@@ -46,6 +46,11 @@
             text-align: center;
             border-top: 3px double white;
         }
+        .photo-container {
+            max-height: 70vh;
+            overflow-y: auto;
+        }
+        
         nav ul {
             list-style: none;
             padding: 0;
@@ -118,9 +123,7 @@
                 var selectedSection = document.getElementById(sectionId);
                 if (selectedSection) {
                     selectedSection.style.display = 'block';
-                    // Remove torus if videos or photos section is clicked
-                    if (sectionId === 'photos' || sectionId === 'videos') {
-                        scene.remove(torus);
+                    scene.remove(torus);
                     }
                 }
             }
@@ -163,8 +166,10 @@
 
         <section id="photos">
             <h2>Photos</h2>
-            <img src="delaney_spr2024.jpg" alt="Delaney in her presentation on <q>What is special about 163?</q>">
-            <img src="rick_spr2024.jpg" alt="Rick in his presentation on the 5/8 theorem">
+            <div class="photo-container">
+                <img src="delaney_spr2024.jpg" alt="Delaney in her presentation on <q>What is special about 163?</q>">
+                <img src="rick_spr2024.jpg" alt="Rick in his presentation on the 5/8 theorem">
+            </div>
         </section>
 
         <section id="videos">
