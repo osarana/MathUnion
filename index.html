@@ -19,10 +19,15 @@
             background-color: #000080;
             padding: 10px;
             border-left: 5px solid white;
+            display: none; /* Hide all sections initially */
+        }
+        p.initial {
+            display: block; /* Only show the initial description */
         }
         a {
             color: white;
             font-weight: bold;
+            cursor: pointer;
         }
         .footer {
             margin-top: 20px;
@@ -46,20 +51,29 @@
             margin-bottom: 20px;
         }
     </style>
+    <script>
+        function showSection(section) {
+            const sections = document.querySelectorAll('section');
+            sections.forEach(sec => sec.style.display = 'none'); // Hide all sections
+            document.getElementById(section).style.display = 'block'; // Show the clicked section
+        }
+    </script>
 </head>
 <body>
     <header>
         <h1>Welcome to the Math Union!</h1>
         <nav>
             <ul>
-                <li><a href="#content">Content</a></li>
-                <li><a href="#photos">Photos</a></li>
-                <li><a href="#videos">Videos</a></li>
-                <li><a href="#announcements">Announcements</a></li>
-                <li><a href="#contact">Contact Us</a></li>
+                <li><a onclick="showSection('content')">Content</a></li>
+                <li><a onclick="showSection('photos')">Photos</a></li>
+                <li><a onclick="showSection('videos')">Videos</a></li>
+                <li><a onclick="showSection('announcements')">Announcements</a></li>
+                <li><a onclick="showSection('contact')">Contact Us</a></li>
             </ul>
         </nav>
     </header>
+
+    <p class="initial">The Math Union at the University of Miami is a community of students passionate about mathematics and its applications. Join us to explore exciting math topics, discuss academic and career opportunities, and connect with fellow math enthusiasts.</p>
 
     <section id="content">
         <h2>Content</h2>
