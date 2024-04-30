@@ -10,12 +10,12 @@
             margin: 0;
             padding: 20px;
         }
-        h1 {
+        h1, h2 {
             background-color: #000080;
             padding: 10px;
             border: 2px dashed white;
         }
-        p {
+        p, form, section {
             background-color: #000080;
             padding: 10px;
             border-left: 5px solid white;
@@ -31,14 +31,73 @@
             text-align: center;
             border-top: 3px double white;
         }
+        nav ul {
+            list-style: none;
+            padding: 0;
+        }
+        nav ul li {
+            display: inline;
+            margin-right: 10px;
+        }
+        img, video {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin-bottom: 20px;
+        }
     </style>
 </head>
 <body>
-    <h1>Welcome to the Math Union!</h1>
-    <p>The Math Union at the University of Miami is a community of students passionate about mathematics and its applications. Join us to explore exciting math topics, discuss academic and career opportunities, and connect with fellow math enthusiasts.</p>
-    <p>Meetings are held weekly. For details on the next meeting or to join our mailing list, please contact us: <a href="mailto:mathunion@miami.edu">mathunion@miami.edu</a></p>
+    <header>
+        <h1>Welcome to the Math Union!</h1>
+        <nav>
+            <ul>
+                <li><a href="#content">Content</a></li>
+                <li><a href="#photos">Photos</a></li>
+                <li><a href="#videos">Videos</a></li>
+                <li><a href="#announcements">Announcements</a></li>
+                <li><a href="#contact">Contact Us</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="content">
+        <h2>Content</h2>
+        <p>Mathematical discussions, problem-solving techniques, and more.</p>
+    </section>
+
+    <section id="photos">
+        <h2>Photos</h2>
+        <img src="photo1.jpg" alt="Math session">
+        <img src="photo2.jpg" alt="Annual math competition">
+    </section>
+
+    <section id="videos">
+        <h2>Videos</h2>
+        <video controls>
+            <source src="math_tutorial.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </section>
+
+    <section id="announcements">
+        <h2>Announcements</h2>
+        <p>New meeting times! Join us every Thursday at 6 PM.</p>
+    </section>
+
+    <section id="contact">
+        <h2>Contact Us</h2>
+        <form action="submit_form.php" method="post">
+            Name: <input type="text" name="name"><br>
+            Email: <input type="email" name="email"><br>
+            Message:<br><textarea name="message" rows="5" cols="30"></textarea><br>
+            <input type="submit" value="Send">
+        </form>
+    </section>
+
     <div class="footer">
         &copy; 2024 Math Union at the University of Miami
     </div>
+
 </body>
 </html>
